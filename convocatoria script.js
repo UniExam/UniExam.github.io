@@ -18,10 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'https://www.ipn.mx/',
             eventos: [
 
-                { nombre: 'Pre-registro de aspirantes INICIA', fecha: '2025-07-08' },
-                { nombre: 'Pre-registro de aspirantes TERMINA', fecha: '2025-09-19' },
-                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2025-09-27'  },
-                { nombre: 'Publicación de resultados', fecha: '2025-10-25' }
+                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-01' },
+                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-05-30'  },
+                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-07-05' }
             ]
         },
 
@@ -33,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
             eventos: [
                 
                 { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-02' },
+                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-04-05'  },
+                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-05-05' }
             ]
         },
         {
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'https://www.uaz.edu.mx/aspirantes/',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2025-09-28' },
+                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-11-05' },
                 
             ]
         },
@@ -53,8 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'https://www.uaz.edu.mx/aspirantes/',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-01-29' },
-                
+                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-04' },
+                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-06-07'  },
+                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-06-27' }
             ]
         },
 
@@ -65,7 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'https://www.uv.mx/',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-20' },
+                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-02' },
+                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-05-17'  },
+                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-07-01' }
                 
             ]
         },
@@ -76,10 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'https://www.uaeh.edu.mx/aspirantes/licenciatura/instructivo.html',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria:', fecha: '2025-08-12' },
-                { nombre: 'Pase de ingreso Licenciaturas:', fecha: '2025-11-10' },
-                { nombre: 'Fecha de Examen:', fecha: '2025-11-26' },
-                { nombre: 'Publicación de Resultados:', fecha: '2025-12-01' },
+                { nombre: 'Publicación de Convocatoria:', fecha: '2026-02-12' },
+                { nombre: 'Fecha de Examen:', fecha: '2026-06-05' },
+                { nombre: 'Publicación de Resultados:', fecha: '2026-06-10' },
                 
             ]
         },
@@ -91,7 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'https://ecoems.org/',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-03-17' },
+                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-09' },
+                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-06-14'  },
+                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-08-18' }
                 
             ]
         },
