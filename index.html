@@ -45,7 +45,7 @@
         </section>
 
         <section id="features">
-            <h2>¿Por Qué Elegir UniExam?</h2>
+            <h4>¿Por Qué Elegir UniExam?</h4>
             <div class="features-grid">
                 <div class="feature-card">
                     <img src="./feature-icon-1.png" alt="Clases en Vivo">
@@ -221,10 +221,84 @@
     </div>
     </section>
 
+<!-- SECCIÓN DE COMENTARIOS -->
+<section class="mb-24 bg-gradient-to-br from-blue-100 via-yellow-100 to-orange-100 py-16">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Título -->
+    <div class="text-center mb-14">
+      <h2 class="text-5xl font-extrabold text-gray-800 mb-4">Opiniones de Nuestros Estudiantes</h2>
+      <p class="text-lg text-gray-600 mb-8">Ellos ya confiaron en UniExam ⭐</p>
+      <button
+  id="btn-nueva-valoracion"
+  class="bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110">
+  ¡Calificar Ahora!
+</button>
+
+<!-- Modal -->
+<div id="modal-valoracion" class="modal-oculto">
+  <div class="modal-contenido">
+    <span id="cerrar-modal" class="cerrar">&times;</span>
+    <h2 class="titulo-modal">Deja tu valoración ⭐</h2>
+
+    <form id="form-valoracion">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="text" id="apellido" placeholder="Tu apellido" required>
+      <input type="text" id="curso" placeholder="Curso (Ej. UAEH, IPN...)" required>
+      <input type="text" id="folio" placeholder="Ingresa tu Folio" required>
+
+      <div id="rating-stars">
+  <span>★</span>
+  <span>★</span>
+  <span>★</span>
+  <span>★</span>
+  <span>★</span>
+</div>
+
+      <form id="form-valoracion">
+  <textarea id="comentario" placeholder="Escribe tu comentario..." required></textarea>
+  <button type="submit" id="btn-enviar">Enviar Valoración</button>
+    </form>
+  </div>
+</div>
+    <!-- Carrusel de comentarios -->
+    <div class="relative">
+      <!-- Botones laterales -->
+<button
+  id="btn-anterior"
+  class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-yellow-100 text-blue-500 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110 z-10"
+>
+  <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+<button
+  id="btn-siguiente"
+  class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-yellow-100 text-blue-500 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110 z-10"
+>
+  <i class="fa-solid fa-chevron-right"></i>
+</button>
+
+
+      <!-- Contenedor de reseñas -->
+        <div id="carousel-container" class="overflow-hidden">
+            <div class="tarjeta-comentario">
+            <h3 class="nombre-usuario">María López</h3>
+            <p class="curso-usuario">Curso: UNAM</p>
+            <div class="estrellas-valoracion">⭐⭐⭐⭐⭐</div>
+            <p class="comentario-usuario">
+                El curso superó mis expectativas. Los temas están bien explicados y las actividades me ayudaron a entender mejor los conceptos.
+            </p>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</section>
+
 <section id="cta">
     <div class="cta-content-wrapper">
         <div class="cta-info">
-            <h2>Registrate para conocer más información</h2>
+            <h2>Inscríbete y Da el Primer Paso</h2>
             <p>Completa el formulario y uno de nuestros asesores se pondrá en contacto contigo a la brevedad para resolver todas tus dudas.</p>
         </div>
 
@@ -279,6 +353,151 @@
         <p>&copy; 2025 UNIEXAM. Todos los derechos reservados.</p>
     </div>
 </footer>
+como quedaria mi script entonces?
+<script>
+// Folios válidos
+const foliosValidos = ["UNX123", "UNX456", "UNI2025", "EXAM001", "ABC999"];
+
+const modal = document.getElementById("modal-valoracion");
+const btnAbrir = document.getElementById("btn-nueva-valoracion");
+const btnCerrar = document.getElementById("cerrar-modal");
+const form = document.getElementById("form-valoracion");
+const estrellas = document.querySelectorAll("#rating-stars span");
+const contenedorComentarios = document.getElementById("carousel-container");
+
+let ratingSeleccionado = 0;
+
+// 🔸 Al cargar la página, obtener comentarios desde el servidor
+window.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const res = await fetch("http://localhost:3000/comentarios");
+    const comentarios = await res.json();
+    comentarios.forEach(c => crearTarjeta(c));
+  } catch (err) {
+    console.error("Error al cargar comentarios:", err);
+  }
+});
+
+// 🔸 Abrir modal
+btnAbrir.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+// 🔸 Cerrar modal
+btnCerrar.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// 🔸 Cerrar si clic fuera del contenido
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// 🔸 Efecto de estrellas
+estrellas.forEach((estrella, index) => {
+  estrella.addEventListener("mouseover", () => {
+    estrellas.forEach((e, i) => e.classList.toggle("hovered", i <= index));
+  });
+
+  estrella.addEventListener("mouseout", () => {
+    estrellas.forEach((e, i) => e.classList.toggle("hovered", i < ratingSeleccionado));
+  });
+
+  estrella.addEventListener("click", () => {
+    ratingSeleccionado = index + 1;
+    estrellas.forEach((e, i) => e.classList.toggle("selected", i < ratingSeleccionado));
+  });
+});
+
+// 🔸 Enviar formulario
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const nombre = document.getElementById("nombre").value.trim();
+  const apellido = document.getElementById("apellido").value.trim();
+  const curso = document.getElementById("curso").value.trim();
+  const folio = document.getElementById("folio").value.trim();
+  const comentario = document.getElementById("comentario").value.trim();
+
+  // Validar folio
+  if (!foliosValidos.includes(folio)) {
+    alert("❌ Folio inválido.");
+    return;
+  }
+
+  // Validar estrellas
+  if (ratingSeleccionado === 0) {
+    alert("⭐ Por favor selecciona una calificación.");
+    return;
+  }
+
+  const data = {
+  nombre,
+  apellido,
+  curso,
+  folio,
+  comentario,
+  estrellas: ratingSeleccionado
+};
+
+// Enviar al servidor
+  try {
+    const res = await fetch("http://localhost:3000/comentarios", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      crearTarjeta(data);
+      alert("✅ Comentario enviado correctamente");
+    } else {
+      alert("❌ Error al guardar el comentario");
+    }
+  } catch (err) {
+    console.error("Error al enviar comentario:", err);
+  }
+
+  // Resetear formulario
+  form.reset();
+  estrellas.forEach((e) => e.classList.remove("selected", "hovered"));
+  ratingSeleccionado = 0;
+  modal.style.display = "none";
+});
+
+  // Crear tarjeta de comentario
+  function crearTarjeta(data) {
+  const tarjeta = document.createElement("div");
+  tarjeta.classList.add("tarjeta-comentario");
+  tarjeta.style.cssText = `
+    background: #fff;
+  border: 2px solid #ffe0b2;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  width: 250px;           /* Ancho fijo */
+  height: 280px;          /* Alto igual al ancho = cuadrado */
+  text-align: center; /* Centra todo */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  `;
+
+  const estrellasHTML = "⭐".repeat(data.estrellas) + "☆".repeat(5 - data.estrellas);
+
+  tarjeta.innerHTML = `
+  <p class="nombre-usuario">${data.nombre} ${data.apellido}</p>
+  <p class="curso-usuario"><strong>Curso:</strong> ${data.curso}</p>
+  <p class="estrellas-valoracion">${estrellasHTML}</p>
+  <p class="comentario-usuario">${data.comentario}</p>
+`;
+
+contenedorComentarios.prepend(tarjeta);
+}
+</script>
+
 
 </body>
 </html>
