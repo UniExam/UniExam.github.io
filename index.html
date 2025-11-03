@@ -355,6 +355,8 @@
 </footer>
 como quedaria mi script entonces?
 <script>
+    const URL = "https://uniexam-github-io.onrender.com/comentarios";
+
 // Folios válidos
 const foliosValidos = ["UNX123", "UNX456", "UNI2025", "EXAM001", "ABC999"];
 
@@ -370,7 +372,7 @@ let ratingSeleccionado = 0;
 // 🔸 Al cargar la página, obtener comentarios desde el servidor
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const res = await fetch("http://localhost:3000/comentarios");
+    const res = await fetch(URL);
     const comentarios = await res.json();
     comentarios.forEach(c => crearTarjeta(c));
   } catch (err) {
@@ -444,7 +446,7 @@ form.addEventListener("submit", async (e) => {
 
 // Enviar al servidor
   try {
-    const res = await fetch("http://localhost:3000/comentarios", {
+    const res = await fetch(URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
