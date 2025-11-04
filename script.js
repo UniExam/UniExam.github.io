@@ -41,6 +41,33 @@ document.addEventListener('DOMContentLoaded', () => {
     navMenu.classList.toggle("show");
   });
 
+  const contenedor = document.getElementById("contenedor-comentarios");
+const btnAnterior = document.getElementById("btn-anterior");
+const btnSiguiente = document.getElementById("btn-siguiente");
+
+let posicion = 0;
+const tarjetasVisibles = 4;
+
+btnSiguiente.addEventListener("click", () => {
+  const totalTarjetas = contenedor.children.length;
+  if (posicion < totalTarjetas - tarjetasVisibles) {
+    posicion++;
+    actualizarCarrusel();
+  }
+});
+
+btnAnterior.addEventListener("click", () => {
+  if (posicion > 0) {
+    posicion--;
+    actualizarCarrusel();
+  }
+});
+
+function actualizarCarrusel() {
+  const desplazamiento = posicion * (100 / tarjetasVisibles);
+  contenedor.style.transform = `translateX(-${desplazamiento}%)`;
+}
+
     const URL = "https://uniexam-github-io.onrender.com/comentarios";
 
 // Folios válidos

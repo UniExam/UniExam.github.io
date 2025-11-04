@@ -521,6 +521,8 @@ textarea#comentario {
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  flex: 0 0 25%; /* Solo 4 tarjetas visibles (100 / 4) */
+  box-sizing: border-box;
 }
 .comentario-usuario {
   color: #444;
@@ -548,6 +550,27 @@ textarea#comentario {
   color: #ffc107; /* Amarillo */
   font-size: 1.1rem;
   margin-bottom: 10px;
+}
+
+.flecha-carrusel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.flecha-carrusel.izquierda {
+  left: 10px;
+}
+
+.flecha-carrusel.derecha {
+  right: 10px;
 }
 
 /* Botón de enviar */
