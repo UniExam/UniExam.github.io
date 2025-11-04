@@ -255,46 +255,45 @@
   <span>★</span>
 </div>
 
-<!-- Formulario para agregar comentarios -->
-<form id="form-valoracion">
+      <form id="form-valoracion">
   <textarea id="comentario" placeholder="Escribe tu comentario..." required></textarea>
   <button type="submit" id="btn-enviar">Enviar Valoración</button>
-</form>
-
-<!-- Carrusel de comentarios -->
-<div class="relative">
-  <!-- Botones laterales -->
-  <button
-    id="btn-anterior"
-    class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-yellow-100 text-blue-500 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110 z-10"
-  >
-    <i class="fa-solid fa-chevron-left"></i>
-  </button>
-
-  <button
-    id="btn-siguiente"
-    class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-yellow-100 text-blue-500 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110 z-10"
-  >
-    <i class="fa-solid fa-chevron-right"></i>
-  </button>
-
-  <!-- Contenedor del carrusel -->
-  <div class="overflow-hidden px-20">
-    <div id="contenedor-comentarios" class="flex transition-transform duration-500 ease-in-out gap-6">
-      <!-- Aquí se insertarán las tarjetas de comentarios dinámicamente -->
-      
-      <!-- Ejemplo de tarjeta inicial -->
-      <div class="tarjeta-comentario">
-        <h3 class="nombre-usuario">María Rodriguez</h3>
-        <p class="curso-usuario">Curso: UNAM</p>
-        <div class="estrellas-valoracion">⭐⭐⭐⭐⭐</div>
-        <p class="comentario-usuario">
-          El curso superó mis expectativas. Los temas están bien explicados y las actividades me ayudaron a entender mejor los conceptos.
-        </p>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
+    <!-- Carrusel de comentarios -->
+    <div class="relative">
+      <!-- Botones laterales -->
+<button
+  id="btn-anterior"
+  class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-yellow-100 text-blue-500 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110 z-10"
+>
+  <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+<button
+  id="btn-siguiente"
+  class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-yellow-100 text-blue-500 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110 z-10"
+>
+  <i class="fa-solid fa-chevron-right"></i>
+</button>
+
+
+      <!-- Contenedor de reseñas -->
+        <div id="carousel-container" class="overflow-hidden">
+            <div class="tarjeta-comentario">
+            <h3 class="nombre-usuario">María López</h3>
+            <p class="curso-usuario">Curso: UNAM</p>
+            <div class="estrellas-valoracion">⭐⭐⭐⭐⭐</div>
+            <p class="comentario-usuario">
+                El curso superó mis expectativas. Los temas están bien explicados y las actividades me ayudaron a entender mejor los conceptos.
+            </p>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</section>
 
 <section id="cta">
     <div class="cta-content-wrapper">
@@ -354,6 +353,7 @@
          <p>&copy; 2025 UNIEXAM. Todos los derechos reservados.</p>
     </div>
 </footer>
+
 
 </body>
 </html>
