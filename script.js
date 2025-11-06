@@ -66,10 +66,40 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Swiper no está cargado. Asegúrate de incluir la librería Swiper.');
     }
 
+const swiperCursos = new Swiper('.course-swiper', {
+  slidesPerView: 3,      // Número de slides visibles
+  spaceBetween: 20,      // Espacio entre slides
+  slidesPerGroup: 3,     // Número de slides que se moverán al hacer click
+  loop: true,            // Para que sea infinito
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+
+  // Función para agregar comentarios dinámicamente
+  function agregarComentario(nombre, curso, estrellas, comentario) {
+    const container = document.getElementById("comentarios-container");
+    const nuevaTarjeta = document.createElement("div");
+    nuevaTarjeta.classList.add("swiper-slide", "tarjeta-comentario");
+
+    nuevaTarjeta.innerHTML = `
+      <h3 class="nombre-usuario">${nombre}</h3>
+      <p class="curso-usuario">Curso: ${curso}</p>
+      <div class="estrellas-valoracion">${"⭐".repeat(estrellas)}</div>
+      <p class="comentario-usuario">${comentario}</p>
+    `;
+
+    container.appendChild(nuevaTarjeta);
+    swiperComentarios.update(); // Actualiza el carrusel
+  }
+
+
     const URL = "https://uniexam-github-io.onrender.com/comentarios";
 
 // Folios válidos
-const foliosValidos = ["UNX123", "UNX456", "UNI2025", "EXAM001", "ABC999"];
+const foliosValidos = ["U102", "Ms104", "H106", "H108", "H112", "BH113", "P114", "H116", "H115", "H103", "H110", "H107", "H109", "H111"];
 
 const modal = document.getElementById("modal-valoracion");
 const btnAbrir = document.getElementById("btn-nueva-valoracion");
@@ -210,4 +240,18 @@ form.addEventListener("submit", async (e) => {
 contenedorComentarios.prepend(tarjeta);
 }
 
+});
+const swiperComentarios = new Swiper('.comentarios-swiper', {
+  slidesPerView: 4,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.comentario-button-prev',
+    prevEl: '.comentario-button-next',
+  },
+  loop: true,
+  breakpoints: {
+    1024: { slidesPerView: 4 },
+    768: { slidesPerView: 2 },
+    480: { slidesPerView: 1 },
+  },
 });

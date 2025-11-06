@@ -87,7 +87,7 @@ section p, #subtitulo {
   display: flex;
   justify-content: flex-end; /* Alinea hacia la derecha */
   flex-wrap: wrap; /* Permite varias tarjetas por fila */
-  gap: 20px; /* Espacio entre tarjetas */
+  gap: 10px; /* Espacio entre tarjetas */
 }
 
 #reviews-container {
@@ -336,6 +336,7 @@ section h2 {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 300px ;
 }
 
 .feature-card:hover {
@@ -788,8 +789,15 @@ textarea#comentario {
     }
 }
 
+section.bg-gradient-to-br {
+  margin-bottom: 20px; /* antes 96px */
+  padding-bottom: 40px; /* antes 64px */
+}
+
+
 #cta {
     background-color: var(--light-color);
+    
 }
 
 #cta h2 {
@@ -967,4 +975,177 @@ footer {
     section h2 {
         font-size: 2rem;
     }
+}
+/* ===== Sección de comentarios ===== */
+.seccion-comentarios {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+/* ===== Carrusel principal ===== */
+.comentarios-swiper {
+  position: relative;
+  padding: 20px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible; 
+}
+
+/* ===== Contenedor de tarjetas ===== */
+.swiper-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px; /* 🔹 Espacio reducido entre tarjetas */
+   height: auto !important;
+    align-items: stretch !important;
+}
+
+/* ===== Tarjetas individuales ===== */
+.tarjeta-comentario {
+  background: #fff;
+  border: 2px solid #ffd18b;
+  border-radius: 20px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 260px; /* 🔹 Tamaño ideal para 4 tarjetas por vista */
+}
+
+.tarjeta-comentario:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Texto dentro de las tarjetas ===== */
+.nombre-usuario {
+  color: #ff7b00;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.curso-usuario {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.estrellas-valoracion {
+  font-size: 1.2rem;
+  color: #ffb400;
+  margin-bottom: 10px;
+}
+
+.comentario-usuario {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+/* ===== Flechas del carrusel ===== */
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute; /* ✅ Imprescindible para que se posicionen correctamente */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #ff7b00;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 25px; /* 🔽 Ajusta este valor según el tamaño que quieras */
+}
+
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: #fff5e6;
+}
+
+/* ===== Flechas del comentarios ===== */
+.comentario-button-prev,
+.comentario-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;       /* círculo pequeño */
+  height: 44px;
+  border-radius: 50%;
+  background: #ff7b00;
+  color: #ffffff;
+  font-size: 30px;   /* flecha más grande pero que quepa en el círculo */
+  text-align: center;
+  line-height: 1;    /* centra verticalmente la flecha */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  transform: translateY(-50%) translateY(-4px); 
+}
+
+.comentario-button-prev:hover,
+.comentario-button-next:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: #fff5e6;
+}
+
+.comentario-button-prev {
+  left: -45px;  /* más a la izquierda */
+}
+
+.comentario-button-next {
+  right: -45px; /* más a la derecha */
+}
+
+
+/* ===== Responsivo ===== */
+@media (max-width: 1024px) {
+  .tarjeta-comentario {
+    width: 220px; /* 🔹 Más angostas en pantallas medianas */
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .comentarios-swiper {
+    padding: 10px;
+  }
+
+  .swiper-wrapper {
+    gap: 8px;
+  }
+
+  .tarjeta-comentario {
+    width: 90%; /* 🔹 Una por fila en móviles */
+    margin: 0 auto;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 36px;
+    height: 36px;
+    top: 45%; /* 🔹 Más arriba en pantallas pequeñas */
+  }
 }
