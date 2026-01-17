@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'unam',
             nombre: 'Universidad Nacional Autónoma de México (UNAM)',
             logo: 'UNAM.png',
-            url: 'https://www.unam.mx/',
+            url: 'https://www.dgae.unam.mx/Licenciatura2026/index.html',
             eventos: [
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-01-13' },
-                
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-01-12' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-01-23' },
+                { nombre: 'Toma de fotografía', fecha: '2026-01-26' },
+                { nombre: 'Aplicación de Examen', fecha: '2026-05-23' },
+                { nombre: 'Publicación de Resultados', fecha: '2026-07-17' }
             ]
         },
         {
