@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         {
             id: 'uaemex',
-            nombre: 'Universidad Autónoma del Estado de México (UAMEX)',
+            nombre: 'Universidad Autónoma del Estado de México (UAEMEX)',
             logo: 'UAEMEX.png',
             url: 'https://www.uaemex.mx/oferta-educativa/aspirantes/convocatorias-ingreso-2026.html',
             eventos: [
