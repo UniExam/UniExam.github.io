@@ -40,26 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            id: 'uaz',
-            nombre: 'Universidad Autónoma de Zacatecas (UAZ)',
-            logo: 'UAZ.png',
-            url: 'https://www.uaz.edu.mx/aspirantes/',
+            id: 'uaem',
+            nombre: 'Universidad Autónoma del Estado de Morelos (UAEM)',
+            logo: 'UAEM.png',
+            url: 'https://www.uaem.mx/convocatoria-nivel-superior-2026/',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-11-05' },
-                
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-01-28' },
+                { nombre: 'PRE-FICHA', fecha: '2026-01-28' },
+                { nombre: 'Fotografía', fecha: '2026-01-28' },
+                { nombre: 'Ficha Definitiva', fecha: '2026-04-27' },
+                { nombre: 'Exámen de Admisión', fecha: '2026-06-06' },
+                { nombre: 'Publicación de Resultados', fecha: '2026-06-28' }  
             ]
         },
         {
             id: 'uady',
             nombre: 'Universidad Autónoma de Yucatán (UADY)',
             logo: 'UADY.png',
-            url: 'https://www.uaz.edu.mx/aspirantes/',
+            url: 'https://ingreso.uady.mx/licenciatura/',
             eventos: [
-                
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-04' },
-                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-06-07'  },
-                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-06-27' }
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-01-27' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-02-03'  },
+                { nombre: 'Toma de fotografía', fecha: '2026-04-27' },
+                { nombre: 'Descarga Pase de Ingreso', fecha: '2026-05-27' },
+                { nombre: 'Exámen de Admisión', fecha: '2026-06-13' },
+                { nombre: 'Publicación de Resultados', fecha: '2026-06-26' }
             ]
         },
 
