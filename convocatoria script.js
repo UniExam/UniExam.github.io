@@ -31,12 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'uaemex',
             nombre: 'Universidad Autónoma del Estado de México (UAMEX)',
             logo: 'UAEMEX.png',
-            url: 'https://www.uaemex.mx/',
+            url: 'https://www.uaemex.mx/oferta-educativa/aspirantes/convocatorias-ingreso-2026.html',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-02' },
-                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-04-05'  },
-                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-05-05' }
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-01-29' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-02-06'  },
+                { nombre: 'Aplicación de Exámen (Aproximadamente)', fecha: '2026-04-03'  },
+                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-05-23' }
             ]
         },
         {
