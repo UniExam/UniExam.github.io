@@ -86,8 +86,8 @@
     to { transform: scale(1); opacity: 1; }
 }
 :root {
-    --primary-blue: #375e25;
-    --secondary-gold: #C4A25D;
+    --primary-blue: #385f27;
+    --secondary-gold: #a1820e;
     --light-gray: #f4f4f4;
     --dark-gray: #333;
     --white: #ffffff;
@@ -300,7 +300,7 @@ h2 {
 }
 
 #enroll-button:hover {
-    background-color: #a98d4e;
+    background-color: #fcb67c;
     transform: scale(1.02);
 }
 
