@@ -76,7 +76,30 @@ const swiperCursos = new Swiper('.course-swiper', {
     prevEl: '.swiper-button-prev',
   },
 });
+const swiper = new Swiper('.course-swiper', {
+  // Configuración por defecto (Escritorio)
+  slidesPerView: 3,
+  spaceBetween: 30,
 
+  // Ajustes responsivos
+  breakpoints: {
+    // Cuando la pantalla mide 320px o más (Móvil)
+    320: {
+      slidesPerView: 1, // <--- AQUÍ: Solo muestra una
+      spaceBetween: 10
+    },
+    // Cuando mide 768px o más (Tablet)
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // Cuando mide 1024px o más (Escritorio)
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }
+});
 
   // Función para agregar comentarios dinámicamente
   function agregarComentario(nombre, curso, estrellas, comentario) {
@@ -241,17 +264,18 @@ contenedorComentarios.prepend(tarjeta);
 }
 
 });
-const swiperComentarios = new Swiper('.comentarios-swiper', {
-  slidesPerView: 4,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.comentario-button-prev',
-    prevEl: '.comentario-button-next',
-  },
-  loop: true,
-  breakpoints: {
-    1024: { slidesPerView: 4 },
-    768: { slidesPerView: 2 },
-    480: { slidesPerView: 1 },
-  },
-});
+// 3. SWIPER DE COMENTARIOS (Configuración para 1 tarjeta en móvil)
+    const swiperComentarios = new Swiper('.comentarios-swiper', {
+        slidesPerView: 1,       // Una tarjeta en móvil
+        centeredSlides: true,   // Centrado perfecto
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+            nextEl: '.comentario-button-next',
+            prevEl: '.comentario-button-prev',
+        },
+        breakpoints: {
+            768: { slidesPerView: 2, centeredSlides: false },
+            1024: { slidesPerView: 4, centeredSlides: false }
+        }
+    });

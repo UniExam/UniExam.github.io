@@ -120,6 +120,62 @@ nav ul li a:hover {
      background-color: #ffda44;
 }
 
+/* === ESTILOS PARA LA HAMBURGUESA (Añadir esto) === */
+.hamburger {
+    display: none; /* Oculta por defecto en escritorio */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #f38e2f;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Asegura que se vea el botón */
+    }
+
+    nav ul {
+        display: none; /* Escondido por defecto */
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 70px; /* Alineado al alto de tu header */
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 999;
+        margin: 0; /* Quita márgenes por defecto */
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+        text-align: center;
+        width: 100%; /* Ocupa todo el ancho */
+        margin-left: 0; /* Resetea el margen de escritorio */
+    }
+
+    /* Esta es la clase que activa el JS */
+    nav ul.show {
+        display: flex;
+    }
+}
+
+    /* Ajuste de logo para que no se amontone */
+    .logo-img {
+        height: 50px;
+    }
 
 
 #hero {
@@ -352,4 +408,86 @@ h4 {
     padding: 30px;
     border-radius: 15px;
     margin-top: 3rem;
+}
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets y pantallas medianas (menos de 1024px) */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2, h4 {
+        font-size: 35px;
+    }
+}
+
+/* Móviles (menos de 768px) */
+@media (max-width: 768px) {
+    /* Hero Section */
+    #hero {
+        height: 70vh; /* Reducimos altura para que no sea eterno en móvil */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Secciones generales */
+    section {
+        padding: 3rem 5%;
+    }
+
+    h2, h4 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    /* Features / Cards */
+    .feature-card {
+        height: auto; /* IMPORTANTE: Quitamos el alto fijo de 300px */
+        padding: 1.5rem;
+    }
+
+    .features-grid {
+        gap: 1rem;
+    }
+
+    /* Curriculum */
+    .module {
+        min-width: 100%; /* Los módulos ocupan todo el ancho en móvil */
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Aviso de Privacidad */
+    .privacy-card {
+        padding: 20px;
+    }
+
+    .data-list {
+        grid-template-columns: 1fr; /* Una sola columna para los datos */
+    }
+
+    .container-privacy {
+        text-align: left;
+    }
+}
+
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .cta-button {
+        width: 100%; /* Botones de acción a pantalla completa */
+        text-align: center;
+    }
 }
