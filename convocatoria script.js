@@ -18,12 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'ipn',
             nombre: 'Instituto Politécnico Nacional (IPN)',
             logo: 'POLI.png',
-            url: 'https://www.ipn.mx/',
+            url: 'https://www.admision.ipn.mx/portal/index.html',
             eventos: [
 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-01' },
-                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-05-30'  },
-                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-07-05' }
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-01-31' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-01-31' },
+                { nombre: 'Aplicación de examen', fecha: '2026-06-13'  },
+                { nombre: 'Publicación de resultados', fecha: '2026-07-11' }
             ]
         },
 
@@ -87,12 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'uaeh',
             nombre: ' Universidad Autónoma del Estado de Hidalgo (UAEH)',
             logo: 'UAEH.png',
-            url: 'https://www.uaeh.edu.mx/aspirantes/licenciatura/instructivo.html',
+            url: 'https://www.uaeh.edu.mx/aspirantes/licenciatura/',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria:', fecha: '2026-02-12' },
-                { nombre: 'Fecha de Examen:', fecha: '2026-06-05' },
-                { nombre: 'Publicación de Resultados:', fecha: '2026-06-10' },
+                { nombre: 'Publicación de Convocatoria:', fecha: '2026-02-10' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-02-10'  },
+                { nombre: 'Fecha de Examen:', fecha: '2026-06-16' },
+                { nombre: 'Publicación de Resultados:', fecha: '2026-06-18' },
                 
             ]
         },
@@ -101,12 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'media superior',
             nombre: 'Media Superior (ECOEMS)',
             logo: 'ECOEMS.png',
-            url: 'https://ecoems.org/',
+            url: 'https://www.miderechomilugar.com/',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-09' },
-                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-06-14'  },
-                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-08-18' }
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-02-17' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-03-17'  },
+                { nombre: 'Aplicación de examen', fecha: '2026-06-20'  },
+                { nombre: 'Publicación de resultados', fecha: '2026-08-18' }
+                
+            ]
+        },
+
+        {
+            id: 'UANL',
+            nombre: 'Universidad Autónoma de Nuevo León (UANL)',
+            logo: 'UANL.png',
+            url: 'https://www.uanl.mx/tramites/concurso-de-ingreso-a-licenciatura/',
+            eventos: [
+                
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-02-16' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-03-17'  },
+                { nombre: 'Aplicación de examen', fecha: '2026-05-30'  },
+                { nombre: 'Publicación de resultados', fecha: '2026-06-19' }
                 
             ]
         },
