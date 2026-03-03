@@ -75,12 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'uv',
             nombre: ' Universidad Veracruzana (UV)',
             logo: 'UV.png',
-            url: 'https://www.uv.mx/',
+            url: 'https://www.uv.mx/escolar/licenciatura2026/pdf/Convocatoria_Lic_y_TSU_2026.pdf',
             eventos: [
                 
-                { nombre: 'Publicación de Convocatoria (Aproximadamente)', fecha: '2026-02-02' },
-                { nombre: 'Aplicación de examen (Aproximadamente)', fecha: '2026-05-17'  },
-                { nombre: 'Publicación de resultados (Aproximadamente)', fecha: '2026-07-01' }
+                { nombre: 'Publicación de Convocatoria', fecha: '2026-02-27' },
+                { nombre: 'Registro de Aspirantes', fecha: '2026-03-02'  },
+                { nombre: 'Subir fotografía', fecha: '2026-03-26' },
+                { nombre: 'Exámen de Admisión', fecha: '2026-05-30' },
+                { nombre: 'Publicación de Resultados', fecha: '2026-07-03' }
                 
             ]
         },
